@@ -6,10 +6,13 @@ startBtn.addEventListener('click', onStartBtnClick);
 stopBtn.addEventListener('click', onStopBtnClick);
 
 let colorInterval = null;
+stopBtn.disabled = true;
 
 function onStartBtnClick() {
+  setRandomBodyColor();
   colorInterval = setInterval(setRandomBodyColor, 1000);
   startBtn.disabled = true;
+  stopBtn.disabled = false;
 }
 
 function setRandomBodyColor() {
@@ -27,5 +30,6 @@ function onStopBtnClick() {
     return;
   }
   clearInterval(colorInterval);
+  stopBtn.disabled = true;
   startBtn.disabled = false;
 }
