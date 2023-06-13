@@ -2,14 +2,14 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// dateTimeEl = document.querySelector('#datetime-picker');
+const dateTimeEl = document.querySelector('#datetime-picker');
 
-startBtn = document.querySelector('button[data-start]');
+const startBtn = document.querySelector('button[data-start]');
 
-daysEl = document.querySelector('span[data-days]');
-hoursEl = document.querySelector('span[data-hours]');
-minutesEl = document.querySelector('span[data-minutes]');
-secondsEl = document.querySelector('span[data-seconds]');
+const daysEl = document.querySelector('span[data-days]');
+const hoursEl = document.querySelector('span[data-hours]');
+const minutesEl = document.querySelector('span[data-minutes]');
+const secondsEl = document.querySelector('span[data-seconds]');
 startBtn.disabled = true;
 let selectedDateMs = null;
 
@@ -31,7 +31,7 @@ const options = {
   },
 };
 
-flatpickr(document.querySelector('#datetime-picker'), options);
+flatpickr(dateTimeEl, options);
 
 startBtn.addEventListener('click', onBtnClick);
 
